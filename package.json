@@ -1,0 +1,24 @@
+{
+  "name": "Notebook",
+  "version": "1.0.0",
+  "description": "custom notes application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anjatron/Notebook.git"
+  },
+  "keywords": [
+    "notebook",
+    "electron"
+  ],
+  "author": "Anja Draskovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anjatron/Notebook/issues"
+  },
+  "homepage": "https://github.com/anjatron/Notebook#readme"
+}
