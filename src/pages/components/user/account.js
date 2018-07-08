@@ -13,15 +13,15 @@ class Account extends React.Component {
 
     render() {
         return (
-            <Grid container spacing={8} alignItems="center" justify="center" direction="row" style={{paddingTop: '50px'}}>
-                <Grid item xs={12}> 
+            <Grid item xs={12} style={{paddingTop: '50px'}}>
+                <Grid container spacing={8} alignItems="center" justify="center" direction="row"> 
                     <Typography variant="display1" gutterBottom>
-                    Hello, {this.props.username}! 
-                    Welcome to your profile. 
+                        Hello, {this.props.username}! 
+                        Welcome to your profile. 
                     </Typography>
                 </Grid>
 
-                <Grid item xs={12}>
+                <Grid container spacing={8} alignItems="center" justify="center" direction="row">
                     <Typography variant="body2">
                         Some sharing info and privileges should go here...
                         Maybe even manag
