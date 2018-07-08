@@ -1,11 +1,11 @@
 # Notebook
 A custom notes application built with:
-    - [Electron](https://electronjs.org/)
-    - [React](https://reactjs.org/)
-        - [Material UI](https://material-ui.com/)
-        - [Redux](https://redux.js.org/) 
-        - [Redux Sagas](https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html)
-    - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) with Google Cloud option
+- [Electron](https://electronjs.org/)
+- [React](https://reactjs.org/)
+    - [Material UI](https://material-ui.com/)
+    - [Redux](https://redux.js.org/) 
+    - [Redux Sagas](https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html)
+- [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) with Google Cloud option
 
 
 The tech stack was specifically picked to work with some new frameworks - Electron, Material UI, and MongoDB in the cloud. Needless to say there were learning curves setting the project up but the experience let me gain fullstack force strength. This took me a couple of hours during the week nights to accomplish.  
@@ -55,7 +55,7 @@ Folder empty structure:
 
 All content is saved as a string except To Do list which is an array of objects: ```{text: '', done: false}```.
 
-For the markdown style note capablities, after some research I found a great node module that can be embedded called [SimpleMDE](https://www.npmjs.com/package/react-simplemde-editor. Originally I was going to make that option just mark the file as '.md', in the case exporting a file is implemented it would be saved correctly. The other option was creating a real time parser for markdown but with the time restraints of the week I decided that a helper module would give decent functionality. 
+For the markdown style note capablities, after some research I found a great node module that can be embedded called [SimpleMDE](https://www.npmjs.com/package/react-simplemde-editor). Originally I was going to make that option just mark the file as '.md', in the case exporting a file is implemented it would be saved correctly. The other option was creating a real time parser for markdown but with the time restraints of the week I decided that a helper module would give decent functionality. 
 Both HTML and Code Snippet styling is brought to you by a handy library called [React-Highlight](https://github.com/akiran/react-highlight). It allows you to specify languages to convert input to the correct syntax. 
 
 Note that changing the note style will remove all previous content that was set. 
