@@ -61,9 +61,7 @@ class NoteEditor extends React.Component {
     render() {
         if (!this.props.note || this.props.viewingType !== 'note') {
             return (
-                <LoadingContent
-                    message="Setting stuff up..."
-                />
+                <LoadingContent message="Setting stuff up..." />
             )
         }
 

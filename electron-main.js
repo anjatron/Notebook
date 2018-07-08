@@ -12,7 +12,6 @@ function isDev() {
 
   
   function createWindow () {
-    console.log('create electron window');
     const _session = session.fromPartition('persist:notebook');
 
     // Create the browser window.

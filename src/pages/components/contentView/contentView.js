@@ -26,9 +26,7 @@ class ContentView extends React.Component {
         let that = this;
         if (this.props.loading && this.props.loggedIn) {
             return (
-                <LoadingContent
-                    message="Your notebook is loading..."
-                />
+                <LoadingContent message="Your notebook is loading..." />
             );
         }
 

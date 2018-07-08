@@ -6,13 +6,13 @@ import {
     CircularProgress
 } from '@material-ui/core';
 
-class LoadingContent extends React.component {
+class LoadingContent extends React.Component {
     constructor(props) {
         super(props);
     }
 
     render() {
-        let loadingMessage = (this.props.message) ? this.props.message : 'Loading content...' 
+        let loadingMessage = (this.props.message) ? this.props.message : 'Loading content...';
         return (
             <Grid id="loading-content" container alignItems="center" justify="center" direction="row" style={{paddingTop: '65px'}}>
                 <CircularProgress />

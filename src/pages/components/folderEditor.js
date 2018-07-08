@@ -74,9 +74,7 @@ class FolderEditor extends React.Component {
 
         if (!this.props.viewing || this.props.viewing._id !== this.props.history.location.pathname.split('/')[2]) {
             return (
-                <LoadingContent
-                    message="Setting stuff up..."
-                />
+                <LoadingContent message="Setting stuff up..." />
             );
         }
 
