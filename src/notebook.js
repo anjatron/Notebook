@@ -8,6 +8,7 @@ import {
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 import HeaderContainer from 'pages/containers/smartHeader';
+import BannerContainer from 'pages/containers/smartBanner';
 
 const theme = createMuiTheme({
     palette: {
@@ -26,7 +27,7 @@ const theme = createMuiTheme({
         pageHolder: '#90A4AE'
     },
     typography: {
-        fontSize: 12,
+        fontSize: 12
     }
 });
 
@@ -48,6 +49,7 @@ class Notebook extends React.Component {
                     <HeaderContainer history={this.props.history}/>
 
                     <Grid item xs={12}>
+                        <BannerContainer />
                         {this.props.children}
                     </Grid>
                 </Grid>
