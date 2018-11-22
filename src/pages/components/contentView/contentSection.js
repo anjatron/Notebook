@@ -14,7 +14,7 @@ class ContentSection extends React.Component {
     }
 
     render() {
-        let gridId = "content-section-" + this.props.type;
+        let gridId = 'content-section-' + this.props.type;
         return (
             <Grid id={gridId} container spacing={24} style={{margin: '15px', paddingTop: '20px'}} direction="row">
                 <Grid item xs={12}>

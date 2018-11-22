@@ -36,7 +36,7 @@ class SearchNotebook extends React.Component {
                         </ListItem>
                     ))}
                 </List>
-            )
+            );
         }
         else {
             return '';
@@ -44,7 +44,7 @@ class SearchNotebook extends React.Component {
     }
 
     render() {
-        let SearchResultsList = this.searchItems();
+        const SearchResultsList = this.searchItems();
 
         return (
             <div id="searchcomponent-wrapper"> 
@@ -61,7 +61,7 @@ class SearchNotebook extends React.Component {
                     {SearchResultsList}
                 </Paper>
             </div>
-        )
+        );
     }
 }
 

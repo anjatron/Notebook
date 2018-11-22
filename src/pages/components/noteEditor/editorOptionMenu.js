@@ -35,7 +35,7 @@ class EditorOptionMenu extends React.Component {
                 </Select>
                 </Tooltip>
             </FormControl>
-        )
+        );
     }
 }
 

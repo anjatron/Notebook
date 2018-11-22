@@ -32,37 +32,37 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     onEditNote: (noteId, data) => {
-        dispatch(editNote(noteId, data))
+        dispatch(editNote(noteId, data));
     },
     onNoteTypeChange: (noteId, noteType) => {
-        dispatch(noteTypeChange(noteId, noteType))
+        dispatch(noteTypeChange(noteId, noteType));
     },
     onShareNote: (sharingWith, noteId) => {
-        dispatch(shareNote(sharingWith, noteId))
+        dispatch(shareNote(sharingWith, noteId));
     },
     clearViewingType: () => {
-        dispatch(clearViewingType())
+        dispatch(clearViewingType());
     },
     onSaveChanges: () => {
-        dispatch(saveNoteChanges())
+        dispatch(saveNoteChanges());
     },
     onNameChange: (noteId, name) => {
-        dispatch(changeNoteName(noteId, name))
+        dispatch(changeNoteName(noteId, name));
     },
     onAddNote: (noteId) => {
-        dispatch(addNote(noteId))
+        dispatch(addNote(noteId));
     },
     onOpenNote: (noteData) => {
-        dispatch(openNote(noteData, 'note'))
+        dispatch(openNote(noteData, 'note'));
     },
     onUpdateNoteTags: (noteId, tags) => {
-        dispatch(updateNoteTags(noteId, tags))
+        dispatch(updateNoteTags(noteId, tags));
     },
     onCodeLanguageChange: (noteId, language) => {
-        dispatch(codeLanguageChange(noteId, language))
+        dispatch(codeLanguageChange(noteId, language));
     },
     onGetNote: (noteId) =>{
-        dispatch(getNote(noteId))
+        dispatch(getNote(noteId));
     }
 });
 

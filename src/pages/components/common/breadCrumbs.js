@@ -5,11 +5,10 @@ import {
     Button
 } from '@material-ui/core';
 
-
 import {
     KeyboardArrowRight,
     KeyboardArrowDown
-} from '@material-ui/icons'
+} from '@material-ui/icons';
 // notes & folders 
 // current path
 class BreadCrumbs extends React.Component {
@@ -36,11 +35,11 @@ class BreadCrumbs extends React.Component {
             if (path.includes('FOLDER-')) {
                 item = _.find(this.props.folders, (folder) => {
                     return folder._id === path;
-                })
+                });
             } else {
                 item = _.find(this.props.notes, (note) => {
                     return note._id === path;
-                })
+                });
             }
 
             let crumb = null;
@@ -49,7 +48,6 @@ class BreadCrumbs extends React.Component {
                 
             if (index === paths.length - 1) {
                 // last crum no need for icon 
-
                 crumbIcon = (<KeyboardArrowDown/>);
                 noClick = true;
             } 
@@ -57,12 +55,12 @@ class BreadCrumbs extends React.Component {
             let crumbName = (item && item.name) ? item.name : 'No name';
             crumb = (
                 <Grid item xs={2} key={'crumb-' + item._id}>
-                    <Button onClick={() => { if (!noClick) {this.clickedCrumb(item)}}}> 
+                    <Button onClick={() => { if (!noClick) {this.clickedCrumb(item);}}}> 
                         {crumbName}
                         {crumbIcon}
                     </Button>
                 </Grid>
-            )
+            );
 
             crumbs.push(crumb);
         });
@@ -82,7 +80,7 @@ class BreadCrumbs extends React.Component {
             <Grid container direction="row" style={{borderBottomStyle: 'solid', borderBottomWidth: 'thin', borderBottomColor: '#B2DFDB'}}>
                {BreadCrumbs}
             </Grid>
-        )
+        );
     }
 }
 

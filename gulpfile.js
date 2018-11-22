@@ -34,7 +34,6 @@ gulp.task('html', ['clean'], function() {
 //         .pipe(gulp.dest('dist/css'));
 // });
 
-
 // webpack build our scripts
 gulp.task('webpack', ['clean'], function() {
     return gulp.src('src/app.js')
@@ -50,8 +49,6 @@ gulp.task('webpack', ['clean'], function() {
 //         callback();
 //     });
 // });
-
-
 
 gulp.task('default', ['html', 'webpack']);
 

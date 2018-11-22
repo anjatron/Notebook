@@ -9,11 +9,10 @@ import {
     Paper
 } from '@material-ui/core';
 
-
 import {
     GroupAdd,
     Save
-} from '@material-ui/icons'
+} from '@material-ui/icons';
 
 import ContentView from 'pages/components/contentView/contentView';
 import BreadCrumbs from 'pages/components/common/breadCrumbs';

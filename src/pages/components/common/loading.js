@@ -1,4 +1,4 @@
-'use strit';
+'use strict';
 
 import {
     Grid,
@@ -20,7 +20,7 @@ class LoadingContent extends React.Component {
                      {loadingMessage}
                 </Typography>
             </Grid>
-        )
+        );
     }
 }
 

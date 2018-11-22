@@ -16,9 +16,9 @@ const mapStateToProps = state => ({
 
 const mapDispatchProps = (dispatch) => ({
     onLoginUser: (username) => {
-        dispatch(loginUserRequested(username))
+        dispatch(loginUserRequested(username));
     }
-})
+});
 
 const LoginContainer = connect(
     mapStateToProps, 

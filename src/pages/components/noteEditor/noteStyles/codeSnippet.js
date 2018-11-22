@@ -18,7 +18,7 @@ class CodeSnippet extends React.Component {
     }
 
     languageChange(value) {
-        this.props.onCodeLanguageChange(this.props.note._id, value)
+        this.props.onCodeLanguageChange(this.props.note._id, value);
     }
 
     render() {
@@ -30,31 +30,31 @@ class CodeSnippet extends React.Component {
                     onLanguageChange={this.languageChange}
                 />
                 <Grid item xs={6} style={{borderRightStyle: 'solid', borderRightWidth: 'thin', paddingLeft: '10px', paddingRight: '10px'}}>
-                    <Typography variant="subheading">
+                    <Typography variant='subheading'>
                         Code Editor
                     </Typography>
                     <Divider/>
                     <TextField 
-                        id="note-codesnippet-text"
+                        id='note-codesnippet-text'
                         placeholder='Write code'
                         style={{position: 'absolute', height: 'inherit', margin: '10px', width: '45%'}}
                         multiline={true}
                         InputProps={{disableUnderline: true}}
                         defaultValue={this.props.content}
-                        onChange={(event) => {this.props.onEditNote(this.props.note._id, event.target.value)}}
+                        onChange={(event) => {this.props.onEditNote(this.props.note._id, event.target.value);}}
                     />
                 </Grid>
                 <Grid item xs={6} style={{paddingLeft: '10px', paddingRight: '10px'}}>
-                    <Typography variant="subheading">
+                    <Typography variant='subheading'>
                         Code Preview
                     </Typography>
                     <Divider/>
-                    <Highlight id="note-codesnippet-code" language="javascript">
+                    <Highlight id='note-codesnippet-code' language='javascript'>
                         {this.props.content}
                     </Highlight>  
                 </Grid>
             </Grid>
-        )
+        );
     }
 }
 
@@ -75,9 +75,9 @@ class LanguagePicker extends React.Component {
                         id: 'codesnippet-language',
                     }}
                 >
-                    <MenuItem value="javascript">javascript</MenuItem>
-                    <MenuItem value="java">java</MenuItem>
-                    <MenuItem value="c++">c++</MenuItem>
+                    <MenuItem value='javascript'>javascript</MenuItem>
+                    <MenuItem value='java'>java</MenuItem>
+                    <MenuItem value='c++'>c++</MenuItem>
                 </Select>
             </Grid>
         );   

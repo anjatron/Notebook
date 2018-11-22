@@ -31,28 +31,28 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     onOpenFolder: (folderData) => {
-        dispatch(openFolder(folderData, 'folder'))
+        dispatch(openFolder(folderData, 'folder'));
     },
     onOpenNote: (noteData) => {
-        dispatch(openNote(noteData, 'note'))
+        dispatch(openNote(noteData, 'note'));
     },
     onAddFolder: (data) => {
-        dispatch(saveFolderUpdates(data))
+        dispatch(saveFolderUpdates(data));
     },
     clearViewingType: () => {
-        dispatch(clearViewingType())
+        dispatch(clearViewingType());
     },
     onDeleteNote: (item) => {
-        dispatch(deleteNote(item))
+        dispatch(deleteNote(item));
     },
     onDeleteFolder: (item) => {
-        dispatch(deleteFolder(item))
+        dispatch(deleteFolder(item));
     },
     onNameChange: (folderId, name) => {
-        dispatch(changeFolderName(folderId, name))
+        dispatch(changeFolderName(folderId, name));
     },
     onGetFolder: (folderId) => {
-        dispatch(getFolder(folderId))
+        dispatch(getFolder(folderId));
     }
 });
 

@@ -29,28 +29,28 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchProps = (dispatch) => ({
     onAddFolder: (data) => {
-        dispatch(addFolder(data))
+        dispatch(addFolder(data));
     },
     onAddNote: (data) => {
-        dispatch(addNote(data))
+        dispatch(addNote(data));
     }, 
     onSearchContent: (searchTerm) => {
-        dispatch(searchContent(searchTerm))
+        dispatch(searchContent(searchTerm));
     },
     clearViewingType: () => {
-        dispatch(clearViewingType())
+        dispatch(clearViewingType());
     },
     onCreateNote: (noteData) => {
-        dispatch(createNote(noteData))
+        dispatch(createNote(noteData));
     },
     onCreateFolder: (folderData) => {
-        dispatch(createFolder(folderData))
+        dispatch(createFolder(folderData));
     },
     onSaveNoteUpdates: (username, noteData) => {
-        dispatch(saveNoteUpdates(username, noteData))
+        dispatch(saveNoteUpdates(username, noteData));
     },
     onSaveFolderUpdates: (username, folderData) => {
-        dispatch(saveFolderUpdates(username, folderData))
+        dispatch(saveFolderUpdates(username, folderData));
     }
 });
 

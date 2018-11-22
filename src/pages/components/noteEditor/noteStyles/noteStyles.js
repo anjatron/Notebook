@@ -21,31 +21,30 @@ class NoteStyles extends React.Component {
         if (this.props.noteType === 'markdown') {
             return (
                 <Markdown {...this.props}/>
-            )
+            );
         }
         else if (this.props.noteType === 'html') {
             return (
                 <HTML {...this.props}/>
-            )
+            );
         }
         else if (this.props.noteType === 'todolist') {
             return (
                 <ToDoList {...this.props}/>
-            )
+            );
         }
         else if (this.props.noteType === 'codesnippet') {
             return (
                 <CodeSnippet {...this.props}/>
-            )
+            );
         }
         else {
             // plain text default 
             return (
                 <PlanText {...this.props}/>
-            )
+            );
         }
     }
 }
-
 
 export default NoteStyles;

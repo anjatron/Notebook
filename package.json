@@ -8,7 +8,8 @@
     "start": "electron .",
     "gulp": "gulp",
     "build": "npm install . && gulp && npm run start",
-    "dev": "export ELECTRON_ENV=dev && npm run build"
+    "dev": "export ELECTRON_ENV=dev && npm run build",
+    "lint": "gulp lint"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/anjatron/Notebook#readme",
   "dependencies": {
+    "babel-eslint": "^10.0.1",
     "babel-polyfill": "^6.26.0",
     "lodash": "^4.17.10",
     "react-highlight": "^0.12.0",

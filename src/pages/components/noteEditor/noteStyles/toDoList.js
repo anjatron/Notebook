@@ -15,14 +15,13 @@ import {
     Delete
 } from '@material-ui/icons';
 
-
 class ToDoList extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
             tasks: []
-        }
+        };
     }
 
     shouldComponentUpdate() {
@@ -30,20 +29,18 @@ class ToDoList extends React.Component {
     }
 
     componentWillUnmount() {
-        var todolist = document.getElementById("note-todolist");
-        todolist.removeEventListener("keyup", function() {
-            
-        });
+        var todolist = document.getElementById('note-todolist');
+        todolist.removeEventListener('keyup', function() {});
     }
 
     componentDidMount() {
-        var todolist = document.getElementById("note-todolist");
+        var todolist = document.getElementById('note-todolist');
 
         let that = this;
-        todolist.addEventListener("keyup", function(event) {
+        todolist.addEventListener('keyup', function(event) {
             event.preventDefault();
 
-            // Number 13 is the "Enter" key on the keyboard
+            // Number 13 is the 'Enter' key on the keyboard
             if (event.keyCode === 13) {
                 // add new todo item
                 let content = that.props.content.slice();
@@ -84,10 +81,10 @@ class ToDoList extends React.Component {
         // value = text
         // done = true/false
         // center grid container
-        let tasks = this.props.content;
+        const tasks = this.props.content;
         return (
             <Grid container style={{width: '40%'}} spacing={16}>
-                <List id="note-todolist" style={{width: '100%'}}>
+                <List id='note-todolist' style={{width: '100%'}}>
                     {tasks.map((task, index) => (
                         <ListItem
                             key={'task-' + index}
@@ -107,14 +104,14 @@ class ToDoList extends React.Component {
                                         fullWidth={true}
                                         defaultValue={task.text}
                                         onChange={(event) => {
-                                            this.onChangeTaskText(event,index)
+                                            this.onChangeTaskText(event,index);
                                         }}
                                         autoFocus={index === (tasks.length - 1)}
                                     />
                                 }
                             />
                             <ListItemSecondaryAction>
-                                <IconButton aria-label="Delete task" onClick={() => this.onDeleteTask(index) }>
+                                <IconButton aria-label='Delete task' onClick={() => this.onDeleteTask(index) }>
                                 <Delete />
                                 </IconButton>
                             </ListItemSecondaryAction>
@@ -122,8 +119,7 @@ class ToDoList extends React.Component {
                     ))}
                 </List>
             </Grid>
-
-        )
+        );
     }
 }
 

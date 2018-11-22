@@ -16,8 +16,7 @@ import {
     AccountCircle
 } from '@material-ui/icons';
 
-
-import SearchNotebook from 'pages/components/appHeader/searchNotebook'
+import SearchNotebook from 'pages/components/appHeader/searchNotebook';
 
 import utils from 'utils';
 
@@ -36,7 +35,7 @@ class Header extends React.Component {
         let that = this;
         createFolder(newFolder).then(() => {
             that.props.history.push('/folder/' + newFolder._id);
-        })
+        });
     }
 
     addNewNote() {
@@ -45,7 +44,7 @@ class Header extends React.Component {
         let that = this;
         createNote(newNote).then(() => {
             that.props.history.push('/note/' + newNote._id);
-        })
+        });
     }
 
     viewProfile() {
@@ -68,12 +67,11 @@ class Header extends React.Component {
                 if (this.props.viewingType === 'folder') {
                     createFolder(this.props.viewing).then(() => {
                         that.props.history.push('/home');
-                    })
-
+                    });
                 } else {
                     createNote(this.props.viewing).then(() => {
                         that.props.history.push('/home');
-                    })
+                    });
                 }
             }
         }
@@ -111,7 +109,7 @@ class Header extends React.Component {
                     </IconButton>
                 </Tooltip>
             </div>
-        )
+        );
     }
 
     showHomeButton() {
@@ -124,7 +122,7 @@ class Header extends React.Component {
                         <Home/>
                     </IconButton>
                 </Tooltip>
-            )
+            );
         }
     }
 
@@ -136,15 +134,15 @@ class Header extends React.Component {
                 <IconButton onClick={() => this.viewProfile()}>
                     <AccountCircle/>
                 </IconButton>
-            )
+            );
         }
     }
 
     render() {
-        let SearchComponent = this.showSearchComponent();
-        let CreateContentBtns = this.showCreateContentButtons();
-        let HomeButton = this.showHomeButton();
-        let AccountButton = this.showAccountButton();
+        const SearchComponent = this.showSearchComponent();
+        const CreateContentBtns = this.showCreateContentButtons();
+        const HomeButton = this.showHomeButton();
+        const AccountButton = this.showAccountButton();
 
         return (
             <div style={{flexGrow: 1}}>
@@ -173,7 +171,7 @@ class Header extends React.Component {
                     </Toolbar>
                 </AppBar>
             </div>
-        )
+        );
     }
 }
 

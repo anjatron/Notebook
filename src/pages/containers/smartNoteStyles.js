@@ -27,7 +27,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     onEditNote: (noteId, data) => {
-        dispatch(editNote(noteId, data))
+        dispatch(editNote(noteId, data));
     }
 });
 

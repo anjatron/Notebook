@@ -62,7 +62,7 @@ class NoteEditor extends React.Component {
         if (!this.props.note || this.props.viewingType !== 'note') {
             return (
                 <LoadingContent message="Setting stuff up..." />
-            )
+            );
         }
 
         let notes = (this.props.notes) ? this.props.notes.slice() : [];

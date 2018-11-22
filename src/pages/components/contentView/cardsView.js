@@ -47,7 +47,7 @@ class CardsView extends React.Component {
             let CardIcon =  (<Folder />);
             let cardIconColor = {
                 colorPrimary: '#00E676'
-            }
+            };
             if (this.props.type === 'note') {
                 CardIcon = (<Description />);
                 cardIconColor.colorPrimary = '#FFEB3B';
@@ -60,12 +60,12 @@ class CardsView extends React.Component {
                         <Card raised={true}>
                             <CardContent>
                                 <List dense={true}>
-                                    <ListItem button onClick={() => {this.openCard(item)}} classes={{focusVisible: false}}>
+                                    <ListItem button onClick={() => {this.openCard(item);}} classes={{focusVisible: false}}>
                                         <ListItemIcon>
                                             {CardIcon}
                                         </ListItemIcon>
                                         <ListItemText primary={cardName}/>
-                                        <ListItemSecondaryAction onClick={() => {this.deleteCard(item)}}>
+                                        <ListItemSecondaryAction onClick={() => {this.deleteCard(item);}}>
                                             <IconButton aria-label="Delete">
                                                 <Delete />
                                             </IconButton>
@@ -75,8 +75,8 @@ class CardsView extends React.Component {
                             </CardContent>
                         </Card>
                     </Grid>
-                )
-            })
+                );
+            });
         }
         return (null);
     }

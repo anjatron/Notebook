@@ -23,7 +23,7 @@ class TagsSection extends React.Component {
             border: '1px solid #ced4da',
             fontSize: '13px',
             color: '#BDBDBD'
-        }
+        };
         return (
             <Grid id="note-tags-grid" item xs={12} style={{minHeight: '50px', marginLeft: '20px'}}>
                 <TextField 
@@ -36,7 +36,7 @@ class TagsSection extends React.Component {
                     style={{position: 'absolute', width: '80%'}}
                 />
             </Grid>
-        )
+        );
     }
 }
 
