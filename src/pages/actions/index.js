@@ -18,7 +18,7 @@ export const loadContentSucceeded = (username, folders, notes) => ({
 export const loadContentRequested = (username) => ({
     type: 'GET_ALL_USER_CONTENT_REQUESTED',
     username: username
-})
+});
 
 export const addFolder = (folder) => ({
     type: 'ADD_FOLDER',
@@ -150,17 +150,17 @@ export const codeLanguageChange = (noteId, language) => ({
     type: 'CODE_LANGUAGE_CHANGE',
     noteId: noteId,
     language: language
-})
+});
 
 export const getFolder = (folderId) => ({
     type: 'GET_FOLDER_REQUESTED',
     folderId: folderId
-})
+});
 
 export const getNote = (noteId) => ({
     type: 'GET_NOTE_REQUESTED',
     noteId: noteId
-})
+});
 
 export const openSubFolder = (folderData,viewingType) => ({
     type: 'OPEN_SUBFOLDER',
@@ -172,4 +172,14 @@ export const openSubNote = (noteId, viewingType) => ({
     type: 'OPEN_SUBNOTE',
     data: noteId,
     viewingType: viewingType
+});
+
+export const displayBanner = (bannerType, data) => ({
+    type: 'DISPLAY_BANNER',
+    data: data,
+    bannerType: bannerType
+});
+
+export const dismissBanner = () => ({
+    type: 'DISMISS_BANNER'
 });

@@ -9,9 +9,9 @@ import {
     deleteNoteState,
     deleteFolderState,
     addFolder,
-    addNote
+    addNote,
+    displayBanner
 } from 'pages/actions';
-
 
 function createFolder(folder) {   
     return new Promise((resolve, reject) => {
@@ -21,8 +21,8 @@ function createFolder(folder) {
             } else {
                 resolve(results);
             }
-        })
-    })
+        });
+    });
 }
 
 function createNote(note) {   
@@ -33,8 +33,8 @@ function createNote(note) {
             } else {
                 resolve(results);
             }
-        })
-    })
+        });
+    });
 }
 
 function getAllNotes(username) {   
@@ -45,9 +45,8 @@ function getAllNotes(username) {
             } else {
                 resolve(results);
             }
-        })
-    })
-
+        });
+    });
 }
 
 function getAllFolders(username) {
@@ -58,8 +57,8 @@ function getAllFolders(username) {
             } else {
                 resolve(results);
             }
-        })
-    })
+        });
+    });
 }
 
 function getContent(payload) {
@@ -71,7 +70,7 @@ function getContent(payload) {
             folders: results[0],
             notes: results[1]
         }
-    })
+    });
 }
 
 function* getAllContentByUser(action) {
@@ -81,15 +80,14 @@ function* getAllContentByUser(action) {
         yield put(loadContentSucceeded(action.username, results.folders, results.notes));
     } catch(error) {
         console.error(error);
+        yield put(displayBanner('error', error));
     }
 }
 
 function getUser(username) {
     return UserService.createUser(username).then((result) => {
         return result;
-    }).catch((error) => {
-        console.log(error);
-    })
+    });
 }
 
 function* loginUser(action) {
@@ -99,6 +97,7 @@ function* loginUser(action) {
         yield put(loginUserSucceeded(action.username));
     } catch(error) {
         console.error(error);
+        yield put(displayBanner('error', error));
     }
 }
 
@@ -117,6 +116,7 @@ function* deleteNoteInNotebook(action) {
         yield put(deleteNoteState(action.note));
     } catch(error) {
         console.error(error);
+        yield put(displayBanner('error', error));
     }
 }
 
@@ -127,6 +127,7 @@ function* deleteFolderInNotebook(action) {
         yield put(deleteFolderState(action.folder));
     } catch(error) {
         console.error(error);
+        yield put(displayBanner('error', error));
     }
 }
 
@@ -138,8 +139,8 @@ function loadFolder(folderId) {
             } else {
                 resolve(results);
             }
-        })
-    })
+        });
+    });
 }
 
 function* getFolder(action) {
@@ -150,6 +151,7 @@ function* getFolder(action) {
         yield put(addFolder(result));
     } catch(error) {
         console.error(error);
+        yield put(displayBanner('error', error));
     }
 }
 
@@ -161,8 +163,8 @@ function loadNote(noteId) {
             } else {
                 resolve(results);
             }
-        })
-    })
+        });
+    });
 }
 
 function* getNote(action) {
@@ -173,28 +175,27 @@ function* getNote(action) {
         yield put(addNote(result));
     } catch(error) {
         console.error(error);
+        yield put(displayBanner('error', error));
     }
 }
 
 function* updateNote(action) {
     try {
         const result = yield call(createNote, action.note);
-
     } catch(error) {
         console.error(error);
+        yield put(displayBanner('error', error));
     }
 }
 
 function* updateFolder(action) {
     try {
         const result = yield call(createFolder, action.folder);
-
     } catch(error) {
         console.error(error);
+        yield put(displayBanner('error', error));
     }
 }
-
-
 
 function* notebookSaga() {
     yield takeEvery("GET_ALL_USER_CONTENT_REQUESTED", getAllContentByUser);
@@ -206,6 +207,5 @@ function* notebookSaga() {
     yield takeEvery("CREATE_FOLDER_REQUESTED", updateFolder);
     yield takeEvery("CREATE_NOTE_REQUESTED", updateNote);
 }
-
 
 export {notebookSaga, createFolder, createNote};

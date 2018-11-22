@@ -38,7 +38,8 @@ let initialState = {
     FolderTemplate: FolderTemplate,
     searchResults: undefined,
     subFolder: undefined,
-    subNote: undefined
+    subNote: undefined,
+    banner: undefined
 };
 
 import utils from 'utils';
@@ -95,7 +96,7 @@ const NotebookReducer = (state = initialState, action) => {
             newState.viewing = action.note;
             newState.viewingType = 'note';
 
-            return newState
+            return newState;
         }
         case 'SHARE_FOLDER': {
             newState = _.cloneDeep(state);
@@ -120,7 +121,7 @@ const NotebookReducer = (state = initialState, action) => {
 
             // find note and update data
             let thisNote = _.find(newState.notes, (note) => {
-                return action.noteId === note._id
+                return action.noteId === note._id;
             });
 
             thisNote.content = action.data;
@@ -143,7 +144,7 @@ const NotebookReducer = (state = initialState, action) => {
 
             // find note and update its type
             let thisNote = _.find(newState.notes.slice(), (note) => {
-                return action.noteId === note._id
+                return action.noteId === note._id;
             });
 
             // delete language
@@ -156,7 +157,7 @@ const NotebookReducer = (state = initialState, action) => {
 
             // set langauge if code
             if (thisNote.type === 'codesnippet') {
-                thisNote.language = "javascript";
+                thisNote.language = 'javascript';
             }
 
             if (action.noteType === 'todolist') {
@@ -211,7 +212,7 @@ const NotebookReducer = (state = initialState, action) => {
 
             // check if folder is open and search inside that folder
             // need to return folder search results
-            let newResults = undefined
+            let newResults = undefined;
             if (action.searchTerm === '') {
                 newResults = undefined;
             } else {
@@ -265,10 +266,25 @@ const NotebookReducer = (state = initialState, action) => {
 
             return newState;
         }
+        case 'DISPLAY_BANNER': {
+            newState = _.cloneDeep(state);
+
+            newState.banner = {
+                type: action.bannerType
+            };
+            _.extend(newState.banner, action.data);
+            return newState;
+        }
+        case 'DISMISS_BANNER': {
+            newState = _.cloneDeep(state);
+
+            newState.banner = undefined;
+            return newState;
+        }
 
         default:
-            return state
+            return state;
     }
-}
+};
 
 export default NotebookReducer;
