@@ -80,16 +80,29 @@ npm install dev
 
 ### Improvements
 
-- Sharing capablities enabled 
-- Dialogs, tooltips, and error handling
-- Input validation 
-- Clean up styling - theme in general can be constrcuted better
-- Custom HTML real time pareser
-- Custom Markdown parser
-- Real time collaboration so users can work on the same page and see changes live
-- Download/export notes and notebooks 
-- Dont clear state when user closes window, only when user quits the app
-- More efficient searching mechanism
-- All commonly used string should go in constants file
-- Prop types
+- Features   
+    - [ ] Sharing capabilites enabled 
+    - [ ] Real time collaboration so users can work on the same page and see changes live
+    - [ ] Download/export notes and notebooks 
+
+- App infra 
+    - [x] Error handling
+    - [ ] Input validation 
+    - [ ] Clean up styling; theme in general can be constructed better
+    - [ ] Persist session based until app is killed 
+    - [ ] All commonly used strings should go in constants file
+    - [ ] Prop types
+    - [ ] Webpack watch dev mode
+    - [ ] Revisit service setup to be more RESTful
+    - [x] Linting
+    - [ ] Mocha testing
+
+- Custom tools
+    - [ ] Custom HTML real time pareser
+    - [ ] Custom Markdown parser
+    - [ ] More efficient searching mechanism
+
+
+
+
 
