@@ -1,15 +1,15 @@
 
 import {MongoClient} from 'mongodb';
 
-var Config = '../config.json';
+import Config from '../../config';
 
-var uri = "mongodb+srv://anjatron:darthCLEO@cluster0-jtdyw.gcp.mongodb.net/test?retryWrites=true";
+// var uri = "mongodb+srv://anjatron:darthCLEO@cluster0-jtdyw.gcp.mongodb.net/test?retryWrites=true";
 
 
 var UserService = {
     createUser: function (payload) {
         return new Promise((resolve, reject) => { 
-            MongoClient.connect(uri, function(err, client) {
+            MongoClient.connect(Config.uri, function(err, client) {
                 if (err) {
                     console.error('error connecting to mongodb'); 
                     reject(err);
@@ -23,11 +23,11 @@ var UserService = {
                     client.close();
                 }
             });
-        })
+        });
     },
 
     getUsers: function () {
-        MongoClient.connect(uri).then((client) => {
+        MongoClient.connect(Config.uri).then((client) => {
             const db = client.db("test");
 
             const collection = db.collection('folders');

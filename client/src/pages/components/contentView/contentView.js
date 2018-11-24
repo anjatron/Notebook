@@ -6,7 +6,7 @@ import {
     CircularProgress
 } from '@material-ui/core';
 
-import utils from 'utils';
+import utils from '../../../../utils';
 
 import LoadingContent from 'pages/components/common/loading';
 import ContentSection from 'pages/components/contentView/contentSection';

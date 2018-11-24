@@ -20,7 +20,7 @@ import LoadingContent from 'pages/components/common/loading';
 
 import NotebookService from 'services/notebookService';
 
-import utils from 'utils';
+import utils from '../../../utils';
 
 class FolderEditor extends React.Component {
     constructor(props) {

@@ -2,12 +2,13 @@
   "name": "Notebook",
   "version": "1.0.0",
   "description": "custom notes application",
-  "main": "electron-main.js",
+  "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
+    "client": "electron .",
+    "server": "node server/server.js",
     "gulp": "gulp",
-    "build": "npm install . && gulp && npm run start",
+    "build": "npm install . && gulp && npm run client",
     "dev": "export ELECTRON_ENV=dev && npm run build",
     "lint": "gulp lint"
   },
@@ -28,10 +29,15 @@
   "dependencies": {
     "babel-eslint": "^10.0.1",
     "babel-polyfill": "^6.26.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "http": "0.0.0",
     "lodash": "^4.17.10",
+    "mongoose": "^5.3.13",
     "react-highlight": "^0.12.0",
     "react-simplemde-editor": "^3.6.16",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "webpack-dev-middleware": "^3.4.0"
   },
   "devDependencies": {
     "@material-ui/core": "^1.3.0",

@@ -1,8 +1,7 @@
 
 import {MongoClient} from 'mongodb';
 
-import Config from '../config';
-
+import Config from '../../config';
 
 var NotebookService = {
     getAllNotesByUser: function (payload, callback) {
@@ -18,7 +17,7 @@ var NotebookService = {
                 callback(null, items);
                 client.close();
                 // return items;
-            })
+            });
         }).catch((error) => {
             console.error('error connecting to mongodb while getting all notes by'); 
             // cb(error, null);
@@ -40,7 +39,7 @@ var NotebookService = {
                 callback(null, items);
                 client.close();
                 // return items;
-            })
+            });
         }).catch((error) => {
             console.error('error connecting to mongodb while getting all folder by user'); 
             callback(error, null);
@@ -101,7 +100,8 @@ var NotebookService = {
                     callback(null, result)
                 } 
                 _client.close();
-            }).catch((error) => {
+            })
+            .catch((error) => {
                 callback(error, null);
                 console.log(error);
             });

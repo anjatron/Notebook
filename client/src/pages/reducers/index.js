@@ -42,7 +42,7 @@ let initialState = {
     banner: undefined
 };
 
-import utils from 'utils';
+import utils from '../../../utils';
 
 const NotebookReducer = (state = initialState, action) => {
     switch (action.type) {

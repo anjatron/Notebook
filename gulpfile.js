@@ -15,7 +15,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('lint', function () {
-    return gulp.src('src/pages/**/**')
+    return gulp.src('client/src/pages/**/**')
         .pipe(eslint())
         .pipe(eslint.format())
 });
@@ -23,7 +23,7 @@ gulp.task('lint', function () {
 
 // copy index html file
 gulp.task('html', ['clean'], function() {
-    return gulp.src('src/index.html')
+    return gulp.src('client/index.html')
         .pipe(gulp.dest('dist/'));
 });
 
@@ -36,7 +36,7 @@ gulp.task('html', ['clean'], function() {
 
 // webpack build our scripts
 gulp.task('webpack', ['clean'], function() {
-    return gulp.src('src/app.js')
+    return gulp.src('client/routes.js')
         .pipe(webpackStream(webpackConfig, webpack))
         .pipe(gulp.dest('dist/js'));
   });

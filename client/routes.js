@@ -20,8 +20,10 @@ const store = createStore(NotebookReducer, applyMiddleware(sagaMiddleware));
 
 sagaMiddleware.run(notebookSaga);
 
+// ROOT APP
+import Notebook from './app';
+
 // ROUTES
-import Notebook from 'notebook';
 import ContentViewContainer from 'pages/containers/smartContentView';
 import NoteEditorContainer from 'pages/containers/smartNoteEditor';
 import FolderContainer from 'pages/containers/smartFolderEditor';

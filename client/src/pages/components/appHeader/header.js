@@ -18,7 +18,7 @@ import {
 
 import SearchNotebook from 'pages/components/appHeader/searchNotebook';
 
-import utils from 'utils';
+import utils from '../../../../utils';
 
 import {createNote, createFolder} from 'sagas/saga';
 

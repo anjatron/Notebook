@@ -1,6 +1,7 @@
 const {app, BrowserWindow, session} = require('electron');
 const url = require("url");
 const path = require("path");
+// const express = require('express');
   
 function isDev() {
   return process.env.ELECTRON_ENV === "dev";
@@ -12,6 +13,8 @@ function isDev() {
 
   
   function createWindow () {
+    // express();
+
     const _session = session.fromPartition('persist:notebook');
 
     // Create the browser window.

@@ -6,16 +6,17 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 
 const paths = {
-    SRC_DIR: path.resolve(__dirname, 'src'),
+    CLIENT_DIR: path.resolve(__dirname, 'client/'),
+    SRC_DIR: path.resolve(__dirname, 'client/src'),
     NODE_DIR: path.resolve(__dirname, 'node_modules'),
     DIST_DIR: path.resolve(__dirname, 'dist'),
     DIST_JS_DIR: path.resolve(__dirname, 'dist/js'),
-    CLIENT: path.resolve(__dirname, 'src/services')
+    CLIENT: path.resolve(__dirname, 'client/src/services')
 }
 
 module.exports = {
     mode: 'development',
-    entry: paths.SRC_DIR + '/app.js',
+    entry: paths.CLIENT_DIR + '/routes.js',
     output: {
       filename: 'bundle.min.js',
       path: path.resolve(__dirname, paths.DIST_JS_DIR),
