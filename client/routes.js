@@ -1,6 +1,6 @@
 'use strict';
 import 'babel-polyfill';
-import 'regenerator-runtime/runtime'
+import 'regenerator-runtime/runtime';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -40,15 +40,15 @@ class App extends React.Component {
         <Provider store={store}>
           <Router>
             <Notebook>
-                <Route exact path="/" component={LoginPage} />
-                <Route path="/home" component={ContentViewContainer} />
-                <Route path="/account" component={AccountContainer}/>
-                <Route path="/folder/:folderId" component={FolderContainer}/>
-                <Route path="/note/:noteId" component={NoteEditorContainer}/>
+                <Route exact path='/' component={LoginPage} />
+                <Route path='/home' component={ContentViewContainer} />
+                <Route path='/account' component={AccountContainer}/>
+                <Route path='/folder/:folderId' component={FolderContainer}/>
+                <Route path='/note/:noteId' component={NoteEditorContainer}/>
             </Notebook>
           </Router>
         </Provider>
-      )
+      );
     }
 }
 

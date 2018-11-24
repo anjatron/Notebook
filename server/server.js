@@ -13,12 +13,12 @@ const Note = require('./models/note');
 const Config = require('../config');
 
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 const server = app.listen(4000, () => {
     var host = server.address().address || '127.0.0.1';
     var port = server.address().port;
-    console.log("Example app listening at http://%s:%s", '127.0.0.1', port);
+    console.log('Example app listening at http://%s:%s', '127.0.0.1', port);
 
     mongoose.connect(Config.uri).then(() => {
         console.log('success connecting to mongodb with mongoose');
@@ -53,7 +53,7 @@ app.post('/api/login', (req, res) => {
 app.get('/api/notes/:username', (req, res) => {
     console.log('notes by: ', req.params.username);
 
-    Note.find({"created_by.username": req.params.username}, function (err, doc) {
+    Note.find({'created_by.username': req.params.username}, function (err, doc) {
         if (err) {
             res.json(err);
             return;
@@ -63,7 +63,7 @@ app.get('/api/notes/:username', (req, res) => {
 });
 
 app.get('/api/notes/:username', (req, res) => {
-    Note.find({"created_by.username": req.params.username}, function (err, doc) {
+    Note.find({'created_by.username': req.params.username}, function (err, doc) {
         if (err) {
             res.json(err);
             return;
@@ -73,7 +73,7 @@ app.get('/api/notes/:username', (req, res) => {
 });
 
 app.get('/api/notes/:noteId', (req, res) => {
-    Note.findOne({"_id": req.params.noteId}, function (err, doc) {
+    Note.findOne({'_id': req.params.noteId}, function (err, doc) {
         if (err) {
             res.json(err);
             return;
@@ -104,7 +104,7 @@ app.delete('/api/notes/:noteId', (req, res) => {
 
 // FOLDERS
 app.get('/api/folders/:username', (req, res) => {
-    Folder.find({"created_by.username": req.params.username}, function (err, doc) {
+    Folder.find({'created_by.username': req.params.username}, function (err, doc) {
         if (err) {
             res.json(err);
             return;
@@ -114,7 +114,7 @@ app.get('/api/folders/:username', (req, res) => {
 });
 
 app.get('/api/folders/:folderId', (req, res) => {
-    Folder.findOne({"_id": req.params.folderId}, function (err, doc) {
+    Folder.findOne({'_id': req.params.folderId}, function (err, doc) {
         if (err) {
             res.json(err);
             return;

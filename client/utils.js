@@ -39,11 +39,11 @@ var utils = {
                 // root folder looking for its data
                 return value.path.includes(viewing._id);
             } 
-        })
+        });
     },
 
     deleteItem: function (data, _id) {
-        let indexToDelete = _.findIndex(data, (value) => { return value._id === _id });
+        let indexToDelete = _.findIndex(data, (value) => { return value._id === _id; });
 
         data.splice(indexToDelete, 1);
 
@@ -60,7 +60,7 @@ var utils = {
             newData.rootFolder = state.viewing;
 
             // make sure we track path
-            let pastPath = state.viewing.path
+            let pastPath = state.viewing.path;
             if (!pastPath) {
                 if (typeof state.viewing._id !== 'string') {
                     pastPath = state.viewing._id.toString();
@@ -81,6 +81,6 @@ var utils = {
             }
         });
     }
-}
+};
 
 export default utils;

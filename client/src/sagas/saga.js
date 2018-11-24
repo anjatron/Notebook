@@ -69,7 +69,7 @@ function getContent(payload) {
         return {
             folders: results[0],
             notes: results[1]
-        }
+        };
     });
 }
 
@@ -198,14 +198,14 @@ function* updateFolder(action) {
 }
 
 function* notebookSaga() {
-    yield takeEvery("GET_ALL_USER_CONTENT_REQUESTED", getAllContentByUser);
-    yield takeEvery("LOGIN_USER_REQUESTED", loginUser);
-    yield takeEvery("DELETE_NOTE_REQUESTED", deleteNoteInNotebook);
-    yield takeEvery("DELETE_FOLDER_REQUESTED", deleteFolderInNotebook);
-    yield takeEvery("GET_FOLDER_REQUESTED", getFolder);
-    yield takeEvery("GET_NOTE_REQUESTED", getNote);
-    yield takeEvery("CREATE_FOLDER_REQUESTED", updateFolder);
-    yield takeEvery("CREATE_NOTE_REQUESTED", updateNote);
+    yield takeEvery('GET_ALL_USER_CONTENT_REQUESTED', getAllContentByUser);
+    yield takeEvery('LOGIN_USER_REQUESTED', loginUser);
+    yield takeEvery('DELETE_NOTE_REQUESTED', deleteNoteInNotebook);
+    yield takeEvery('DELETE_FOLDER_REQUESTED', deleteFolderInNotebook);
+    yield takeEvery('GET_FOLDER_REQUESTED', getFolder);
+    yield takeEvery('GET_NOTE_REQUESTED', getNote);
+    yield takeEvery('CREATE_FOLDER_REQUESTED', updateFolder);
+    yield takeEvery('CREATE_NOTE_REQUESTED', updateNote);
 }
 
 export {notebookSaga, createFolder, createNote};

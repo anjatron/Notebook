@@ -10,7 +10,7 @@ var NotebookService = {
 
             const collection = db.collection('notes');
 
-            collection.find({"created_by.username": payload}).toArray(function (err, items) {
+            collection.find({'created_by.username': payload}).toArray(function (err, items) {
                 if (err) {
                     callback(err, null);
                 }
@@ -31,7 +31,7 @@ var NotebookService = {
 
             const collection = db.collection('folders');
 
-            collection.find({"created_by.username": payload}).toArray(function (err, items) {
+            collection.find({'created_by.username': payload}).toArray(function (err, items) {
                 if (err) {
                     callback(err, null);
                     // return err;
@@ -51,9 +51,9 @@ var NotebookService = {
         let _client = undefined;
         MongoClient.connect(Config.uri).then(client => {
                 _client = client;
-                return client.db(Config.dbName)
+                return client.db(Config.dbName);
             }).then((db) => {
-                return db.collection('notes').findOne({'_id': payload})
+                return db.collection('notes').findOne({'_id': payload});
             })
             .then((result) => {
                 if (callback) {
@@ -71,13 +71,13 @@ var NotebookService = {
         let _client = undefined;
         MongoClient.connect(Config.uri).then(client => {
                 _client = client;
-                return client.db(Config.dbName)
+                return client.db(Config.dbName);
             }).then((db) => {
-                return db.collection('folders').findOne({'_id': payload})
+                return db.collection('folders').findOne({'_id': payload});
             })
             .then((result) => {
                 if (callback) {
-                    callback(null, result)
+                    callback(null, result);
                 } 
                 _client.close();
             })
@@ -91,13 +91,13 @@ var NotebookService = {
         let _client = undefined;
         MongoClient.connect(Config.uri).then(client => {
                 _client = client;
-                return client.db(Config.dbName)
+                return client.db(Config.dbName);
             }).then((db) => {
-                return db.collection('notes').updateOne({ '_id' : payload._id }, {$set: payload}, { upsert:true })
+                return db.collection('notes').updateOne({ '_id' : payload._id }, {$set: payload}, { upsert:true });
             })
             .then((result) => {
                 if (callback) {
-                    callback(null, result)
+                    callback(null, result);
                 } 
                 _client.close();
             })
@@ -111,9 +111,9 @@ var NotebookService = {
         let _client = undefined;
         MongoClient.connect(Config.uri).then(client => {
                 _client = client;
-                return client.db(Config.dbName)
+                return client.db(Config.dbName);
             }).then((db) => {
-                return db.collection('folders').updateOne({ '_id' : payload._id }, {$set: payload}, { upsert:true })
+                return db.collection('folders').updateOne({ '_id' : payload._id }, {$set: payload}, { upsert:true });
             }).then((result) => {
                 if (callback) {
                     callback(null, result);
@@ -129,9 +129,9 @@ var NotebookService = {
         let _client = undefined;
         MongoClient.connect(Config.uri).then(client => {
                 _client = client;
-                return client.db(Config.dbName)
+                return client.db(Config.dbName);
             }).then((db) => {
-                return db.collection('notes').deleteOne({ _id : payload })
+                return db.collection('notes').deleteOne({ _id : payload });
             })
             .then((result) => {
                 if (callback) {
@@ -149,9 +149,9 @@ var NotebookService = {
         let _client = undefined;
         MongoClient.connect(Config.uri).then(client => {
                 _client = client;
-                return client.db(Config.dbName)
+                return client.db(Config.dbName);
             }).then((db) => {
-                return db.collection('folders').deleteOne({ _id : payload })
+                return db.collection('folders').deleteOne({ _id : payload });
             })
             .then((result) => {
                 if (callback) {

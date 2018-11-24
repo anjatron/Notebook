@@ -54,7 +54,7 @@ class Notebook extends React.Component {
                     </Grid>
                 </Grid>
             </MuiThemeProvider>
-        )
+        );
     }
 };
 

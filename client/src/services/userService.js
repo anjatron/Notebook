@@ -3,7 +3,7 @@ import {MongoClient} from 'mongodb';
 
 import Config from '../../config';
 
-// var uri = "mongodb+srv://anjatron:darthCLEO@cluster0-jtdyw.gcp.mongodb.net/test?retryWrites=true";
+// var uri = 'mongodb+srv://anjatron:darthCLEO@cluster0-jtdyw.gcp.mongodb.net/test?retryWrites=true';
 
 
 var UserService = {
@@ -14,11 +14,11 @@ var UserService = {
                     console.error('error connecting to mongodb'); 
                     reject(err);
                 } else {
-                    const db = client.db("test");
+                    const db = client.db('test');
     
                     const collection = db.collection('users');
     
-                    resolve(collection.updateOne({ "username" : payload }, {$setOnInsert: {username: payload}}, { upsert:true }));
+                    resolve(collection.updateOne({ 'username' : payload }, {$setOnInsert: {username: payload}}, { upsert:true }));
 
                     client.close();
                 }
@@ -28,7 +28,7 @@ var UserService = {
 
     getUsers: function () {
         MongoClient.connect(Config.uri).then((client) => {
-            const db = client.db("test");
+            const db = client.db('test');
 
             const collection = db.collection('folders');
 
@@ -40,13 +40,13 @@ var UserService = {
                 // cb(null, items);
                 client.close();
                 return items;
-            })
+            });
         }).catch((error) => {
             console.error('error connecting to mongodb while getting all users'); 
             // cb(error, null);
             return error;
         });
     }
-}
+};
 
 export default UserService;
