@@ -64,19 +64,31 @@ Inpsiration for the design came from a mix of Google Drive and Microsoft Note. M
 
 Sharing was not added but the concept would be - if there are other users logged in, they can be added to the root folder sharing attribute. Then any subfolders or notes would be updated as well. When the Notebook reloads, the user would see all of their creations as well as shared folders marked by an extra shared icon.
 
+### Server
+
+RESTful service in progress. It will run seperately from the electron app and will replace the current MongodbClient calls. 
+Tech stack for service so far: 
+- [Express](https://expressjs.com/)
+- [Mongoose](https://mongoosejs.com/)
+
+Using mongoose has made connecting to Mongodb easy for updates, but the schema is not working properly so there are no models currently being created with the schema, just used to make calls to the DB.
 
 ### Build and Run Notebook
 
 To install package modules, build the application and run it:
 ```
-npm install build
+npm run build
 ```
 
 To run electron in developer mode i.e. open developer console on start:
 ```
-npm install dev
+npm run dev
 ```
 
+To run the service:
+```
+npm run server
+```
 
 ### Improvements
 
@@ -93,9 +105,10 @@ npm install dev
     - [ ] All commonly used strings should go in constants file
     - [ ] Prop types
     - [ ] Webpack watch dev mode
-    - [ ] Revisit service setup to be more RESTful
+    - [ ] Revisit service setup to be more RESTful _**in progress**_
     - [x] Linting
     - [ ] Mocha testing
+    - [ ] Add logger to client and server
 
 - Custom tools
     - [ ] Custom HTML real time pareser
