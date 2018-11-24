@@ -63,7 +63,6 @@ var NotebookService = {
             })
             .catch((error) => {
                 callback(error, null);
-                console.log(error);
             });
     },
 
@@ -83,7 +82,6 @@ var NotebookService = {
             })
             .catch((error) => {
                 callback(error, null);
-                console.log(error);
             });
     },
 
@@ -103,7 +101,6 @@ var NotebookService = {
             })
             .catch((error) => {
                 callback(error, null);
-                console.log(error);
             });
     },
 
@@ -121,7 +118,6 @@ var NotebookService = {
                 _client.close();
             }).catch((error) => {
                 callback(error, null);
-                console.log(error);
             });
     },
 
@@ -141,7 +137,6 @@ var NotebookService = {
             })
             .catch((error) => {
                 callback(error, null);
-                console.log(error);
             });
     },
 
@@ -160,7 +155,6 @@ var NotebookService = {
                 _client.close();
             }).catch((error) => {
                 callback(error, null);
-                console.log(error);
             });
     },
 };

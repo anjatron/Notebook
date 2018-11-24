@@ -76,10 +76,8 @@ function getContent(payload) {
 function* getAllContentByUser(action) {
     try {
         const results = yield call(getContent, action.username);
-        console.log(results);
         yield put(loadContentSucceeded(action.username, results.folders, results.notes));
     } catch(error) {
-        console.error(error);
         yield put(displayBanner('error', error));
     }
 }
@@ -146,11 +144,9 @@ function loadFolder(folderId) {
 function* getFolder(action) {
     try {
         const result = yield call(loadFolder, action.folderId);
-        console.log('got folder data - ', result);
 
         yield put(addFolder(result));
     } catch(error) {
-        console.error(error);
         yield put(displayBanner('error', error));
     }
 }
@@ -170,7 +166,6 @@ function loadNote(noteId) {
 function* getNote(action) {
     try {
         const result = yield call(loadNote, action.noteId);
-        console.log('got note data - ', result);
 
         yield put(addNote(result));
     } catch(error) {
